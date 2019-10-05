@@ -11,7 +11,7 @@ As a user, I want to find events in Atlanta.
 
 As a user, I want to see weather information for the day of the event. 
 
-As a user, I want to see traffic information or alternative rou
+As a user, I want to see traffic information or alternative route
 
 
 
