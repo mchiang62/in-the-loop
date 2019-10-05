@@ -1,0 +1,5 @@
+.display-weather,
+.display-traffic {
+    border-block: border-box;
+    border: solid 1px black;
+}
