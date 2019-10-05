@@ -22,10 +22,6 @@ Project Description:
 
 A user-friendly social application aimed at event-goers in Atlanta to display real time weather and navigation information that is useful for the users to plan their outing.
 
-Project Description:
-
-A user-friendly social application aimed at event-goers in Atlanta to display real time weather and navigation information that is useful for the users to plan their outing.
-
 Our application will consolidate information into one place, so users do not have to use different sources to obtain their information that is important to their outing.
 
 
@@ -41,5 +37,6 @@ API's Used:
 1. Accuweather 
 2. A location or navigation API such as Google Maps
 3. Giphy
+
 
 
