@@ -14,5 +14,4 @@
 //need to create click event with images as well to show div
 
 
-
   });
