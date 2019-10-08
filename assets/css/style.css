@@ -3,3 +3,7 @@
     border-block: border-box;
     border: solid 1px black;
 }
+
+.collap-box{
+    width:80%;
+}
