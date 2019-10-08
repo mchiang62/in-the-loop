@@ -7,15 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Sunny Day Vibes</title>
 </head>
 
 <body>
-    <header>
-        <h1>Sunny Day Vibes</h1>
-        <p>Giving you weather and traffic data to your event since 2019</p>
-    </header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="" class="brand-logo" id="nav-logo">Sunny Day Vibes</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a class="waves-effect waves-light btn" id="login-btn">LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="carousel">
         <a class="carousel-item" id="falcons" href="#one!"><img src="assets/images/falcons-logo.jpeg"></a>
@@ -30,16 +38,128 @@
         <a class="carousel-item" id="verizon" href="#ten!"><img src="assets/images/new_verizon_logo_small-1484149321-8068.jpg"></a>
     </div>
 
-    <input type="text" id="search-input" placeholder="search here"><button id="search-button">Search</button>
+    <div class="row">
 
-    <footer class="footer">Copyright CCDG Enterprises</footer>
+        <div class="col m6">
+            <div class="card-panel">
+                <div class="input-field">
+                    <input type="text" id="search-event">
+                    <label for="search-event">Search event</label>
+                </div>
+                <div class="input-field">
+                    <p>Choose a venue</p>
+                    <br>
+                    <p>
+                        <label>
+                            <input type="checkbox">
+                            <span>Mercedes-Benz</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox">
+                            <span>State Farm Arena</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox">
+                            <span>Coca-Cola Roxy</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox">
+                            <span>Other</span>
+                        </label>
+                    </p>
 
+                </div>
+
+                <div class="input-field">
+                    <input type="text" id="date" class="datepicker">
+                    <label for="date">Choose a date</label>
+                </div>
+
+
+                <div class="input-field center">
+                    <button class="btn" id="search-button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="copyright">© 2014 Copyright CCDG Enterprise</p>
+                </div>
+            </div>
+    </footer>
+    <!-- <footer class="footer">Copyright CCDG Enterprises</footer> -->
+
+    <br>
+<div class="container collap-box">
+    <ul class="collapsible popout results">
+        <li class="active">
+          <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from StubHub</div>
+          <div class="collapsible-body">
+                    <div class="row">
+                        <div class="col s6 display-weather">
+                                <span class="weather-title">Forecasted Weather For This Event</span><hr>
+                                <span class="weather-data">This is a div where data from the API will be displayed and maybe with a gif</span>   
+                        </div>
+                        <div class="col s6 display-traffic">
+                                <span class="traffic-title">Location Information For This Event</span><hr>
+                                <span class="traffic-data">This is a div where data from the API will be displayed and maybe with a gif.</span>
+                        </div>
+                    </div>
+            </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from StubHub</div>
+          <div class="collapsible-body"> 
+                    <div class="row">
+                        <div class="col s6 display-weather">
+                                <span class="weather-title">Forecasted Weather For This Event</span><hr>
+                                <span class="weather-data">This is a div where data from the API will be displayed and maybe with a gif</span>   
+                        </div>
+                        <div class="col s6 display-traffic">
+                                <span class="traffic-title">Location Information For This Event</span><hr>
+                                <span class="traffic-data">This is a div where data from the API will be displayed and maybe with a gif.</span>
+                        </div>
+            </div>
+        </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from StubHub</div>
+          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from StubHub</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from StubHub</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+      </ul>
+</div>
+         
+
+
+<footer class="footer">Copyright CCDG Enterprises</footer>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/javascript/script.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?client=CLIENT_ID"></script>
 </body>
 
 </html>
