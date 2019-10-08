@@ -1,5 +1,4 @@
-# Project-1
-
+# Can You Stand the Rain? (Project-1)
 
 Title: Sunny Day Vibes
 
@@ -34,6 +33,10 @@ As a user, I want to see traffic information or alternative route.
 
 
 
+API's Used: 
+1. Accuweather 
+2. A location or navigation API such as Google Maps
+3. Giphy
 
 
 
