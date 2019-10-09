@@ -24,8 +24,6 @@ $(document).ready(function(){
      
   });
 //API call for weather 
-function weather(){
-  for (var i=0; i>5; i++){
  // This is the API key for Open Weather
  var APIKey = "b7b907c1b8d2d7c447d6c40de9d6cb86";
  var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=atlanta,us&mode=json&units=imperial&APPID=" + APIKey
@@ -41,16 +39,43 @@ function weather(){
   console.log(response);
 
 // Transfer content to HTML
-     $("#time").html("<p>" + response.list[i].dt);
-     $("#humidity").html("<p>" + "Humidity: " + response.list[i].main.humidity);
-     $("#temp").html("<p>" + response.list[i].main.temp + " degrees F");
-     $("#description").html("<p>" + response.list[i].weather[0].description);
+   //  $("#time-one").html("<p>" + response.list[0].dt);
+   //  $("#humidity-one").html("<p>" + "Humidity: " + response.list[0].main.humidity);
+  //   $("#temp-one").html("<p>" + response.list[0].main.temp + " degrees F");
+   //  $("#description-one").html("<p>" + response.list[0].weather[0].description);
 
-   
+
+for(var i=0; i<5; i++){
+
+var row=$("<tr>")
+var rowDisplay= $("<td>");
+rowDisplay.addClass("resultsTime");
+rowDisplay.attr("time", response.list[0].dt)
+
+var rowtwoDisplay= $("<td>");
+rowtwoDisplay.addClass("resultsTemp")
+rowtwoDisplay.attr("temp", response.list[0].main.temp)
+
+var rowthreeDisplay=$("<td>");
+rowthreeDisplay.addClass("resultsDesc")
+rowthreeDisplay.attr("desc", response.list[0].weather[0].description)
+
+var rowfourDisplay=$("<td>");
+rowfourDisplay.addClass("humid")
+rowfourDisplay.attr("humid",response.list[0].main.humidity)
+
+row.append(rowDisplay)
+row.append(rowtwoDisplay)
+row.append(rowthreeDisplay)
+row.append(rowfourDisplay)
+$("#dynamicTable").append(row)
+
+var weatherone = $(".resultsTime").text(response.list[0].dt);
+var weathertwo = $(".resultsTemp").text(response.list[0].main.temp);
+var weatherthree = $(".resultsDesc").text(response.list[0].weather[0].description);
+var weatherfour = $(".humid").text(response.list[0].main.humidity);
+}
+    });
 
 });
 
-}}
-weather();
-
-});
