@@ -17,7 +17,9 @@ $(document).ready(function () {
 
   var search;
 
-
+ //carousel features
+ $('.carousel').carousel();
+ 
   //initialization for collasping container
   //collapse bar features
   $('.collapsible').collapsible();
@@ -36,12 +38,8 @@ $(document).ready(function () {
 
     });
 
-    //carousel features
-    $('.carousel').carousel();
-
 
     $(".results").show();
-
 
 
   });
