@@ -1,5 +1,6 @@
 // Or with jQuery
-$(document).ready(function () {
+ $(document).ready(function(){
+    $('.carousel').carousel();
   var firebaseConfig = {
     apiKey: "AIzaSyCbdMUvQGzxT7u2VSA-tP09Jo6WgzqeNDA",
     authDomain: "sunny-day-b106f.firebaseapp.com",
