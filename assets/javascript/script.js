@@ -23,8 +23,10 @@ $(document).ready(function(){
      $("#search-event").val().trim();
      
   });
-//API call for weather 
- // This is the API key for Open Weather
+
+  //API call for weather//----------------------------------------------------------------------------------------------------------
+  
+  // This is the API key for Open Weather
  var APIKey = "b7b907c1b8d2d7c447d6c40de9d6cb86";
  var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=atlanta,us&mode=json&units=imperial&APPID=" + APIKey
 
@@ -38,44 +40,48 @@ $(document).ready(function(){
 // Log the resulting object
   console.log(response);
 
-// Transfer content to HTML
-   //  $("#time-one").html("<p>" + response.list[0].dt);
-   //  $("#humidity-one").html("<p>" + "Humidity: " + response.list[0].main.humidity);
-  //   $("#temp-one").html("<p>" + response.list[0].main.temp + " degrees F");
-   //  $("#description-one").html("<p>" + response.list[0].weather[0].description);
-
-
+//for loop to dynamically create and display table with data from API for the weather
 for(var i=0; i<5; i++){
 
-var row=$("<tr>")
+var row = $("<tr>");
+row.addClass("row");
+row.attr("data-row",[i]);
+
 var rowDisplay= $("<td>");
 rowDisplay.addClass("resultsTime");
-rowDisplay.attr("time", response.list[0].dt)
+rowDisplay.attr("time", response.list[i].dt_txt)
 
 var rowtwoDisplay= $("<td>");
 rowtwoDisplay.addClass("resultsTemp")
-rowtwoDisplay.attr("temp", response.list[0].main.temp)
+rowtwoDisplay.attr("temp", response.list[i].main.temp)
 
 var rowthreeDisplay=$("<td>");
 rowthreeDisplay.addClass("resultsDesc")
-rowthreeDisplay.attr("desc", response.list[0].weather[0].description)
+rowthreeDisplay.attr("desc", response.list[i].weather[0].description)
 
 var rowfourDisplay=$("<td>");
 rowfourDisplay.addClass("humid")
-rowfourDisplay.attr("humid",response.list[0].main.humidity)
+rowfourDisplay.attr("humid",response.list[i].main.humidity)
 
+//$("[myAttribute=[i]]").
 row.append(rowDisplay)
 row.append(rowtwoDisplay)
 row.append(rowthreeDisplay)
 row.append(rowfourDisplay)
 $("#dynamicTable").append(row)
 
-var weatherone = $(".resultsTime").text(response.list[0].dt);
-var weathertwo = $(".resultsTemp").text(response.list[0].main.temp);
-var weatherthree = $(".resultsDesc").text(response.list[0].weather[0].description);
-var weatherfour = $(".humid").text(response.list[0].main.humidity);
-}
-    });
+//conversion of time from data payload to readable string in HTML
+  var timestamp = response.list[i].dt_txt;
+  var formatted = moment(timestamp).format('LL')
+  console.log(formatted);
 
+//show data to table in HTML
+var weatherone = $(".resultsTime").text(formatted);
+var weathertwo = $(".resultsTemp").text(response.list[i].main.temp);
+var weatherthree = $(".resultsDesc").text(response.list[i].weather[0].description);
+var weatherfour = $(".humid").text(response.list[i].main.humidity);
+}
+  
+  });
 });
 
