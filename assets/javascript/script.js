@@ -18,6 +18,8 @@
 
   var search;
 
+  //carousel features
+  $('.carousel').carousel();
 
   //initialization for collasping container
   //collapse bar features
@@ -28,7 +30,6 @@
 
     $(".results").show();
 
-
     search = $("#search-event").val().trim();
 
     database.ref().push({
@@ -37,39 +38,26 @@
 
     });
 
-    //carousel features
-    $('.carousel').carousel();
-
 
     $(".results").show();
 
 
+    var queryURl = "https://api.stubhub.com/sellers/search/events/v3?q=" + search + "&city=Atlanta"
+    $.ajax({
+        method: "GET",
+        url: queryURl,
+        headers: {
+          Authorization: "Bearer A0cvfZsGTDdB1nyqgQ68SpoGdOWC"
+        }
+      })
+      .then(function (response) {
+        var results = response.data;
+        console.log(results);
+        for (var i = 0; i < 5; i++) {}
+      })
 
-  $("#search-button").on("click", function (event) {
-    event.preventDefault();
-     $("#search-event").val().trim();
 
-     var query = $("#search-event").val().trim();
-     var queryURl = "https://api.stubhub.com/sellers/search/events/v3?q=" + query +"&city=Atlanta"
-     $.ajax({
-      method: "GET", 
-       url: queryURl,
-       Accept: application/JSON,
-       headers: {
-        Authorization: "Bearer A0cvfZsGTDdB1nyqgQ68SpoGdOWC"
-       }
-      
-       
-     })
-     
-        .then(function(response) {
-          var results = response.data;
-          console.log(results);
-          for (var i = 0; i < 5; i++) {
 
-          }
-
-        })
 
   });
   //need to create click event with images as well to show div
