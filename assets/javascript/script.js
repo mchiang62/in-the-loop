@@ -30,7 +30,29 @@ $(document).ready(function () {
     event.preventDefault();
 
      $("#search-event").val().trim();
-     
+
+     var query = $("#search-event").val().trim();
+     var queryURl = "https://api.stubhub.com/sellers/search/events/v3?q=" + query +"&city=Atlanta&state=GA&country=US"
+     $.ajax({
+        
+       url: queryURl,
+       
+       headers: {
+        Authorization: "Bearer A0cvfZsGTDdB1nyqgQ68SpoGdOWC"
+       },
+       method: "GET"
+       
+     })
+    
+        .then(function(response) {
+          var results = response.data;
+          console.log(results);
+          for (var i = 0; i < 5; i++) {
+
+          }
+
+        })
+
   });
 
 
