@@ -17,9 +17,9 @@ $(document).ready(function () {
 
   var search;
 
- //carousel features
- $('.carousel').carousel();
- 
+  //carousel features
+  $('.carousel').carousel();
+
   //initialization for collasping container
   //collapse bar features
   $('.collapsible').collapsible();
@@ -28,7 +28,6 @@ $(document).ready(function () {
     event.preventDefault();
 
     $(".results").show();
-
 
     search = $("#search-event").val().trim();
 
@@ -40,6 +39,23 @@ $(document).ready(function () {
 
 
     $(".results").show();
+
+
+    var queryURl = "https://api.stubhub.com/sellers/search/events/v3?q=" + search + "&city=Atlanta"
+    $.ajax({
+        method: "GET",
+        url: queryURl,
+        headers: {
+          Authorization: "Bearer A0cvfZsGTDdB1nyqgQ68SpoGdOWC"
+        }
+      })
+      .then(function (response) {
+        var results = response.data;
+        console.log(results);
+        for (var i = 0; i < 5; i++) {}
+      })
+
+
 
 
   });
