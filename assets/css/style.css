@@ -31,5 +31,7 @@ footer{
 }
 
 table{
-    width: 50%;
+    width: 100%;
+    border-block: border-box;
+    border: solid 1px black;
 }

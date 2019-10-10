@@ -41,7 +41,7 @@ $(document).ready(function(){
   console.log(response);
 
 //for loop to dynamically create and display table with data from API for the weather
-for(var i=0; i<5; i++){
+for (var i=0; i<=5; i++){
 
 var row = $("<tr>");
 row.addClass("row");
@@ -57,13 +57,15 @@ rowtwoDisplay.attr("temp", response.list[i].main.temp)
 
 var rowthreeDisplay=$("<td>");
 rowthreeDisplay.addClass("resultsDesc")
-rowthreeDisplay.attr("desc", response.list[i].weather[0].description)
+  var formatWords = response.list[i].weather[0].description
+  var formatWordsUpper = formatWords.toUpperCase();
+rowthreeDisplay.attr("desc", formatWordsUpper)
 
 var rowfourDisplay=$("<td>");
 rowfourDisplay.addClass("humid")
 rowfourDisplay.attr("humid",response.list[i].main.humidity)
 
-//$("[myAttribute=[i]]").
+//var ashley = document.querySelectorAll('[data-row]')
 row.append(rowDisplay)
 row.append(rowtwoDisplay)
 row.append(rowthreeDisplay)
@@ -73,13 +75,13 @@ $("#dynamicTable").append(row)
 //conversion of time from data payload to readable string in HTML
   var timestamp = response.list[i].dt_txt;
   var formatted = moment(timestamp).format('LL')
-  console.log(formatted);
+  //console.log(formatted);
 
 //show data to table in HTML
 var weatherone = $(".resultsTime").text(formatted);
-var weathertwo = $(".resultsTemp").text(response.list[i].main.temp);
-var weatherthree = $(".resultsDesc").text(response.list[i].weather[0].description);
-var weatherfour = $(".humid").text(response.list[i].main.humidity);
+var weathertwo = $(".resultsTemp").text("Temp: " + response.list[i].main.temp + " deg F ");
+var weatherthree = $(".resultsDesc").text(formatWordsUpper);
+var weatherfour = $(".humid").text("Humidity: " + response.list[i].main.humidity);
 }
   
   });
