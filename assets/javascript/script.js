@@ -1,5 +1,6 @@
 // Or with jQuery
-$(document).ready(function () {
+ $(document).ready(function(){
+    $('.carousel').carousel();
   var firebaseConfig = {
     apiKey: "AIzaSyCbdMUvQGzxT7u2VSA-tP09Jo6WgzqeNDA",
     authDomain: "sunny-day-b106f.firebaseapp.com",
@@ -40,8 +41,12 @@ $(document).ready(function () {
 
     $(".results").show();
 
-
-    var queryURl = "https://api.stubhub.com/sellers/search/events/v3?q=" + search + "&city=Atlanta"
+    var currentDate = new Date();
+    var endDate = moment(currentDate).add(5, 'days').format("YYYY-MM-DD");
+    var startDate = moment(currentDate).format("YYYY-MM-DD");
+    console.log(startDate)
+    console.log(endDate)
+    var queryURl = "https://api.stubhub.com/sellers/search/events/v3?q=" + search + "&dateLocal=" + startDate +"TO" + endDate + "&city=Atlanta";
     $.ajax({
         method: "GET",
         url: queryURl,
@@ -50,9 +55,23 @@ $(document).ready(function () {
         }
       })
       .then(function (response) {
-        var results = response.data;
-        console.log(results);
-        for (var i = 0; i < 5; i++) {}
+        var results = response;
+        console.log(results)
+        console.log(results.events.length)
+        for (var i = 0; i < results.events.length; i++) {
+          var eventName = results.events[i].name;
+          var eventVenue = results.events[i].venue.name;
+          var minTicketPrice = results.events[i].ticketInfo.minListPrice;
+          var maxTicketPrice = results.events[i].ticketInfo.maxListPrice;
+          var eventDate = results.events[i].eventDateLocal;
+            console.log(eventName)
+            console.log(eventVenue)
+            console.log(minTicketPrice)
+            console.log(maxTicketPrice)
+            console.log(eventDate)
+          
+          
+        }
       })
 
 
@@ -123,4 +142,4 @@ $(document).ready(function () {
       }
 
     });
-});
+})
