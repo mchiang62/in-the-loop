@@ -1,6 +1,6 @@
 // Or with jQuery
  $(document).ready(function(){
-    $('.carousel').carousel();
+  
   var firebaseConfig = {
     apiKey: "AIzaSyCbdMUvQGzxT7u2VSA-tP09Jo6WgzqeNDA",
     authDomain: "sunny-day-b106f.firebaseapp.com",
@@ -21,12 +21,12 @@
   //carousel features
   $('.carousel').carousel();
 
-  //initialization for collasping container
-  //collapse bar features
-  $('.collapsible').collapsible();
+
+
   $(".results").hide();
   $("#search-button").on("click", function (event) {
     event.preventDefault();
+   
 
     $(".results").show();
 
@@ -58,6 +58,7 @@
         var results = response;
         console.log(results)
         console.log(results.events.length)
+        $(".results-cards").empty();
         for (var i = 0; i < results.events.length; i++) {
           var eventName = results.events[i].name;
           var eventVenue = results.events[i].venue.name;
@@ -83,6 +84,7 @@
                       <p>${minTicketPrice}</p>
                       <p>${maxTicketPrice}</p>
                       <p>${eventVenue}</p>
+                      <p>${prettyDate}</p>
                       <img>${"insert google map images"}</img>
                   </div>
                 </div>
@@ -90,7 +92,7 @@
             </div>
             `;
           
-            $(".results").append(searchResults);
+            $(".results-cards").append(searchResults);
           
         }
       })
