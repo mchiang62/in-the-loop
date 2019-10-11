@@ -70,6 +70,26 @@
             console.log(maxTicketPrice)
             console.log(eventDate)
           
+        var searchResults =`
+            <div class="row">
+              <div class="col s12 m7">
+                <div class="card">
+                  <div class="card-image">
+                  <img src="assets/images/Atlanta_Skyline_from_Buckhead.jpg">
+                    <span class="card-title">${eventName}</span>
+                  </div>
+                  <div class="Information">
+                      <p>${minTicketPrice}</p>
+                      <p>${maxTicketPrice}</p>
+                      <p>${eventVenue}</p>
+                      <img>${"insert google map images"}</img>
+                  </div>
+                </div>
+              </div>
+            </div>
+            `;
+          
+            $(".results").append(searchResults);
           
         }
       })
@@ -78,29 +98,6 @@
 
 
   });
-
-
-  var searchResults =`
-  <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <img src="images/sample-1.jpg">
-          <span class="card-title">${"stubname event name variable"}</span>
-        </div>
-        <div class="Information">
-            <p>${"insert ticket price"}</p>
-            <p>${"insert something else"}</p>
-            <img>${"insert google map images"}</img>
-        </div>
-      </div>
-    </div>
-  </div>
-  `;
-
-  $(".results").append(searchResults);
-
-
 
   //API call for weather//----------------------------------------------------------------------------------------------------------
 
