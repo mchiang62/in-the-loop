@@ -1,6 +1,6 @@
 // Or with jQuery
  $(document).ready(function(){
-    $('.carousel').carousel();
+  
   var firebaseConfig = {
     apiKey: "AIzaSyCbdMUvQGzxT7u2VSA-tP09Jo6WgzqeNDA",
     authDomain: "sunny-day-b106f.firebaseapp.com",
@@ -25,6 +25,7 @@
   $(".results").hide();
   $("#search-button").on("click", function (event) {
     event.preventDefault();
+   
 
     $(".results").show();
 
@@ -56,6 +57,7 @@
         var results = response;
         console.log(results)
         console.log(results.events.length)
+        $(".results-card").empty();
         for (var i = 0; i < results.events.length; i++) {
           var eventName = results.events[i].name;
           var eventVenue = results.events[i].venue.name;
@@ -81,6 +83,7 @@
                       <p>${minTicketPrice}</p>
                       <p>${maxTicketPrice}</p>
                       <p>${eventVenue}</p>
+                      <p>${prettyDate}</p>
                       <img>${"insert google map images"}</img>
                   </div>
                 </div>
