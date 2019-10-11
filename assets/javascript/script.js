@@ -71,6 +71,26 @@
             console.log(maxTicketPrice)
             console.log(prettyDate)
           
+        var searchResults =`
+            <div class="row">
+              <div class="col s12 m7">
+                <div class="card">
+                  <div class="card-image">
+                  <img src="assets/images/Atlanta_Skyline_from_Buckhead.jpg">
+                    <span class="card-title">${eventName}</span>
+                  </div>
+                  <div class="Information">
+                      <p>${minTicketPrice}</p>
+                      <p>${maxTicketPrice}</p>
+                      <p>${eventVenue}</p>
+                      <img>${"insert google map images"}</img>
+                  </div>
+                </div>
+              </div>
+            </div>
+            `;
+          
+            $(".results").append(searchResults);
           
         }
       })
@@ -79,8 +99,6 @@
 
 
   });
-  //need to create click event with images as well to show div
-
 
   //API call for weather//----------------------------------------------------------------------------------------------------------
 
@@ -99,7 +117,7 @@
       console.log(response);
 
       //for loop to dynamically create and display table with data from API for the weather
-      for (var i = 0; i <= 5; i++) {
+      for (var i = 0; i < 40; i+=8) {
 
         var row = $("<tr>");
         row.addClass("row");
