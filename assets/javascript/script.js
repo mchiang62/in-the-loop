@@ -64,11 +64,12 @@
           var minTicketPrice = results.events[i].ticketInfo.minListPrice;
           var maxTicketPrice = results.events[i].ticketInfo.maxListPrice;
           var eventDate = results.events[i].eventDateLocal;
+          var prettyDate = moment(eventDate).format('MMMM Do YYYY, h:mm a');
             console.log(eventName)
             console.log(eventVenue)
             console.log(minTicketPrice)
             console.log(maxTicketPrice)
-            console.log(eventDate)
+            console.log(prettyDate)
           
           
         }
