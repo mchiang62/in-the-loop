@@ -21,8 +21,7 @@
   //carousel features
   $('.carousel').carousel();
 
-
-
+  
   $(".results").hide();
   $("#search-button").on("click", function (event) {
     event.preventDefault();
@@ -39,7 +38,7 @@
     });
 
 
-    $(".results").show();
+   
 
     var currentDate = new Date();
     var endDate = moment(currentDate).add(5, 'days').format("YYYY-MM-DD");
@@ -58,7 +57,7 @@
         var results = response;
         console.log(results)
         console.log(results.events.length)
-        $(".results-cards").empty();
+        $(".results-card").empty();
         for (var i = 0; i < results.events.length; i++) {
           var eventName = results.events[i].name;
           var eventVenue = results.events[i].venue.name;
@@ -74,7 +73,7 @@
           
         var searchResults =`
             <div class="row">
-              <div class="col s12 m7">
+              <div class="col m4">
                 <div class="card">
                   <div class="card-image">
                   <img src="assets/images/Atlanta_Skyline_from_Buckhead.jpg">
@@ -92,7 +91,7 @@
             </div>
             `;
           
-            $(".results-cards").append(searchResults);
+            $(".results-card").append(searchResults);
           
         }
       })
