@@ -21,9 +21,7 @@
   //carousel features
   $('.carousel').carousel();
 
-  //initialization for collasping container
-  //collapse bar features
-  $('.collapsible').collapsible();
+  
   $(".results").hide();
   $("#search-button").on("click", function (event) {
     event.preventDefault();
@@ -39,7 +37,7 @@
     });
 
 
-    $(".results").show();
+   
 
     var currentDate = new Date();
     var endDate = moment(currentDate).add(5, 'days').format("YYYY-MM-DD");
@@ -73,7 +71,7 @@
           
         var searchResults =`
             <div class="row">
-              <div class="col s12 m7">
+              <div class="col m4">
                 <div class="card">
                   <div class="card-image">
                   <img src="assets/images/Atlanta_Skyline_from_Buckhead.jpg">
@@ -90,7 +88,7 @@
             </div>
             `;
           
-            $(".results").append(searchResults);
+            $(".results-card").append(searchResults);
           
         }
       })
