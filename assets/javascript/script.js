@@ -60,7 +60,28 @@
 
 
   });
-  //need to create click event with images as well to show div
+
+
+  var searchResults =`
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="images/sample-1.jpg">
+          <span class="card-title">${"stubname event name variable"}</span>
+        </div>
+        <div class="Information">
+            <p>${"insert ticket price"}</p>
+            <p>${"insert something else"}</p>
+            <img>${"insert google map images"}</img>
+        </div>
+      </div>
+    </div>
+  </div>
+  `;
+
+  $(".results").append(searchResults);
+
 
 
   //API call for weather//----------------------------------------------------------------------------------------------------------
@@ -80,7 +101,7 @@
       console.log(response);
 
       //for loop to dynamically create and display table with data from API for the weather
-      for (var i = 0; i <= 5; i++) {
+      for (var i = 0; i < 40; i+=8) {
 
         var row = $("<tr>");
         row.addClass("row");
