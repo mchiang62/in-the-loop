@@ -114,9 +114,6 @@
     })
     .then(function (response) {
 
-      // Log the resulting object
-      //console.log(response);
-
       //for loop to dynamically create and display table with data from API for the weather
       for (var i = 0; i < 40; i+=8) {
 
