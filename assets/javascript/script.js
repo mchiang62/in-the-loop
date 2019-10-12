@@ -90,7 +90,7 @@ $(document).ready(function () {
                     </div>
                     <div class="map">
                       <iframe width="350" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=
-                        &q=${repSpace}" allowfullscreen>
+                        &q=${repSpace}" allowfullscreen>pu
                       </iframe>
                     </div>
                 

@@ -16,6 +16,7 @@ body {
     background-image: url('https://motionarray.imgix.net/preview-72323-mksvsAJ7Sh_0009.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-size: 100% 100%;
     /* background: #fcf8f2; */
     font-family: 'Roboto Condensed', sans-serif;
     margin: 0;
