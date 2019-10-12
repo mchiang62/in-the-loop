@@ -75,8 +75,7 @@ $(document).ready(function () {
           console.log(repSpace)
 
           var searchResults = `
-          <div class="container">
-            <div class="row">
+          
               <div class="col s8 m5">
                 <div class="card">
                   <div class="card-image">
@@ -94,8 +93,7 @@ $(document).ready(function () {
                         &q=${repSpace}" allowfullscreen>
                       </iframe>
                     </div>
-                </div>
-              </div>
+                
             </div>
           </div>
           `;
@@ -105,8 +103,10 @@ $(document).ready(function () {
         }
       })
 
-
-
+{/* <div class="container">
+            <div class="row"></div> */}
+            // </div>
+            // </div>
 
   });
 
