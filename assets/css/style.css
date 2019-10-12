@@ -17,7 +17,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     background: #fcf8f2;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Roboto Condensed', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -56,6 +56,7 @@ footer{
     text-align: center;
     height: 60px;
     background-color:#f44336;
+    
 }
 
 
@@ -70,6 +71,7 @@ footer{
 footer p {
     font-size: 12px;
     display: flex;
+    
     
 }
 
@@ -94,4 +96,9 @@ table{
     display: flex;
     justify-content: center;
     padding: 10px 0;
+}
+
+.results-card {
+    line-height: 30px;
+    font-size: 24px;
 }
