@@ -4,8 +4,8 @@
     border: solid 1px black;
 }
 
-.collap-box{
-    width:80%;
+.collap-box {
+    width: 80%;
 }
 
 * {
@@ -13,13 +13,16 @@
 }
 
 body {
+    background: #fcf8f2;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.page-flexbox-wrapper {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background: #fcf8f2;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
 }
 
 p {
@@ -27,15 +30,15 @@ p {
 }
 
 #nav-logo {
-    padding-left:20px;
-    color:  #ffe0b2;
+    padding-left: 20px;
+    color: #ffe0b2;
     text-shadow: 1.5px 1.5px gray;
     font-size: 36px;
     font-weight: bold;
 }
 
 nav {
-    background-color:#f44336;
+    background-color: #f44336;
     border-bottom: 5px solid black;
 }
 
@@ -45,17 +48,18 @@ nav li a {
 
 #login-btn {
     background: #ffe0b2;
-    color: #f44336;
+    color: #0d47a1;
 }
 
 main {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
 }
 
-footer{
+footer {
     text-align: center;
     height: 60px;
-    background-color:#f44336;
+    background-color: #f44336;
+
 }
 
 
@@ -70,17 +74,18 @@ footer{
 footer p {
     font-size: 12px;
     display: flex;
-    
+
+
 }
 
-table{
-    width: 100%;
-    border-block: border-box;
-    border: solid 1px black;
+
+table {
+    width: 70%;
 }
 
 .card {
-    margin: 0 auto;
+    margin: 0;
+    page-break-inside: avoid;
 }
 
 .event-info {
@@ -96,4 +101,7 @@ table{
     padding: 10px 0;
 }
 
- 
+.results-card {
+    line-height: 30px;
+    font-size: 24px;
+}

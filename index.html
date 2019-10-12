@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
@@ -15,90 +16,106 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="wrapper-container">
-                <div class="wrapper logo-row">
-                    <a href="" class="brand-logo" id="nav-logo">In the Loop</a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Contact Us</a></li>
-                        <li><a class="waves-effect waves-light btn" id="login-btn">LOGIN</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- <main class="wrapper"> -->
-    <div class="carousel">
-        <a class="carousel-item" id="falcons" href="https://www.atlantafalcons.com/schedule/" target="_blank"><img
-                src="assets/images/falcons-logo.jpeg"></a>
-        <a class="carousel-item" id="braves" href="https://batteryatl.com/events-cal/" target="_blank"><img
-                src="assets/images/battery.jpg"></a>
-        <a class="carousel-item" id="hawks" href="https://www.nba.com/hawks/schedule#" target="_blank"><img
-                src="assets/images/Atlanta-Hawks-logo.png"></a>
-        <a class="carousel-item" id="fox" href="https://www.foxtheatre.org/events" target="_blank"><img
-                src="assets/images/fox-logo.png"></a>
-        <a class="carousel-item" id="state-farm" href="https://www.statefarmarena.com/events" target="_blank"><img
-                src="assets/images/state_farm_arena_-_atlanta.png"></a>
-        <a class="carousel-item" id="roxy" href="https://www.livenation.com/venues/33164/coca-cola-roxy"
-            target="_blank"><img src="assets/images/roxy.jpg"></a>
-        <a class="carousel-item" id="symphony" href="https://www.atlantasymphony.org/ConcertsAndTickets/Calendar" target="_blank"><img src="assets/images/aso-logo.png"></a>
-        <a class="carousel-item" id="tabernacle" href="http://www.tabernacleatl.com" target="_blank"><img src="assets/images/The_Tabernacle_logo.png"></a>
-        <a class="carousel-item" id="cobb" href="https://www.cobbenergycentre.com/events" target="_blank"><img
-                src="assets/images/cobb-energy-performing-arts-centre.jpg"></a>
-        <a class="carousel-item" id="verizon" href="https://www.livenation.com/venues/14312/ameris-bank-amphitheatre" target="_blank"><img
-                src="assets/images/new_verizon_logo_small-1484149321-8068.jpg"></a>
-    </div>
-
-    <div class="container " id="search-card">
-        <div class="row">
-            
-            <div class="col s12 m4 l8">
-                <div class="card-panel">
-                    <div class="input-field">
-                        <input type="text" id="search-event" class="blue-text text-darken-2">
-                        <label for="search-event" class="blue-text">Search event</label>
-                    </div>
-
-
-                    <div class="input-field center">
-                        <button class="btn" id="search-button">Search</button>
+    <div class="page-flexbox-wrapper">
+        <header>
+            <nav class="blue darken-4">
+                <div class="wrapper-container">
+                    <div class="wrapper logo-row">
+                        <a href="" class="brand-logo" id="nav-logo">In the Loop</a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a class="waves-effect waves-light btn" id="login-btn">LOGIN</a></li>
+                        </ul>
                     </div>
                 </div>
+            </nav>
+        </header>
+
+        <main class="wrapper">
+            <div class="carousel">
+                <a class="carousel-item" id="falcons" href="https://www.atlantafalcons.com/schedule/"
+                    target="_blank"><img src="assets/images/falcons-logo.jpeg"></a>
+                <a class="carousel-item" id="braves" href="https://batteryatl.com/events-cal/" target="_blank"><img
+                        src="assets/images/battery.jpg"></a>
+                <a class="carousel-item" id="hawks" href="https://www.nba.com/hawks/schedule#" target="_blank"><img
+                        src="assets/images/Atlanta-Hawks-logo.png"></a>
+                <a class="carousel-item" id="fox" href="https://www.foxtheatre.org/events" target="_blank"><img
+                        src="assets/images/fox-logo.png"></a>
+                <a class="carousel-item" id="state-farm" href="https://www.statefarmarena.com/events"
+                    target="_blank"><img src="assets/images/state_farm_arena_-_atlanta.png"></a>
+                <a class="carousel-item" id="roxy" href="https://www.livenation.com/venues/33164/coca-cola-roxy"
+                    target="_blank"><img src="assets/images/roxy.jpg"></a>
+                <a class="carousel-item" id="symphony"
+                    href="https://www.atlantasymphony.org/ConcertsAndTickets/Calendar" target="_blank"><img
+                        src="assets/images/aso-logo.png"></a>
+                <a class="carousel-item" id="tabernacle" href="http://www.tabernacleatl.com" target="_blank"><img
+                        src="assets/images/The_Tabernacle_logo.png"></a>
+                <a class="carousel-item" id="cobb" href="https://www.cobbenergycentre.com/events" target="_blank"><img
+                        src="assets/images/cobb-energy-performing-arts-centre.jpg"></a>
+                <a class="carousel-item" id="verizon"
+                    href="https://www.livenation.com/venues/14312/ameris-bank-amphitheatre" target="_blank"><img
+                        src="assets/images/new_verizon_logo_small-1484149321-8068.jpg"></a>
             </div>
-        </div>
-    </div>
+
+            <div class="container " id="search-card">
+                <div class="row">
+
+                    <div class="col s12 m4 l8">
+                        <div class="card-panel">
+                            <div class="input-field">
+                                <input type="text" id="search-event" class="blue-text text-darken-2">
+                                <label for="search-event" class="blue-text">Search event</label>
+                            </div>
 
 
-    <div class="row col-12">
-        <table class="results center">
-            <thead class="row col-12">
-                <th>
-                    <h3> 5 Day Forecast </h3>
-                </th>
-            </thead>
-            <tbody id="dynamicTable">
-            </tbody>
-        </table>
-    </div>
-
-
-    <div class="results-card">
-
-    </div>
-    <!-- </main> -->
-    <footer>
-        <div class="wrapper-footer">
-            <div class="row">
-                <div class="col-12" id="footer-text">
-                    <p class="copyright">© 2014 Copyright CCDG Enterprise</p>
+                            <div class="input-field center">
+                                <button class="btn" id="search-button">Search</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+            <div class="container">
+                <table>
+                    <table class="results center responsive-table">
+                        <thead>
+                            <th>
+                                <h5>Date</h5>
+                            </th>
+                            <th>
+                                <h5>Temperature</h5>
+                            </th>
+                            <th>
+                                <h5>Description</h5>
+                            </th>
+                            <th>
+                                <h5>Humidity</h5>
+                            </th>
+                        </thead>
+                        <tbody id="dynamicTable">
+                        </tbody>
+                    </table>
+
+            </div>
+
+
+            <br>
+
+
+            <br>
+            <div class="results-card"> </div>
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12" id="footer-text">
+                            <p class="copyright">© 2014 Copyright CCDG Enterprise</p>
+                        </div>
+                    </div>
+            </footer>
+        </main>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
@@ -111,61 +128,3 @@
 </body>
 
 </html>
-
-
-
-<!-- <li class="active">
-    <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from
-        StubHub</div>
-    <div class="collapsible-body">
-        <div class="row">
-            <div class="col s6 display-weather">
-                <span class="weather-title">Forecasted Weather For This Event</span>
-                <hr>
-                <span class="weather-data">This is a div where data from the API will be displayed and maybe
-                    with a gif</span>
-            </div>
-            <div class="col s6 display-traffic">
-                <span class="traffic-title">Location Information For This Event</span>
-                <hr>
-                <span class="traffic-data">This is a div where data from the API will be displayed and maybe
-                    with a gif.</span>
-            </div>
-        </div>
-    </div>
-</li>
-<li>
-    <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from
-        StubHub</div>
-    <div class="collapsible-body">
-        <div class="row">
-            <div class="col s6 display-weather">
-                <span class="weather-title">Forecasted Weather For This Event</span>
-                <hr>
-                <span class="weather-data">This is a div where data from the API will be displayed and maybe
-                    with a gif</span>
-            </div>
-            <div class="col s6 display-traffic">
-                <span class="traffic-title">Location Information For This Event</span>
-                <hr>
-                <span class="traffic-data">This is a div where data from the API will be displayed and maybe
-                    with a gif.</span>
-            </div>
-        </div>
-    </div>
-</li>
-<li>
-    <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from
-        StubHub</div>
-    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-</li>
-<li>
-    <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from
-        StubHub</div>
-    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-</li>
-<li>
-    <div class="collapsible-header"><i class="material-icons">chevron_right</i>Insert Name of event from
-        StubHub</div>
-    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-</li> -->
