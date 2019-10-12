@@ -1,6 +1,6 @@
 // Or with jQuery
- $(document).ready(function(){
-  
+$(document).ready(function () {
+
   var firebaseConfig = {
     apiKey: "AIzaSyCbdMUvQGzxT7u2VSA-tP09Jo6WgzqeNDA",
     authDomain: "sunny-day-b106f.firebaseapp.com",
@@ -21,11 +21,11 @@
   //carousel features
   $('.carousel').carousel();
 
-  
+
   $(".results").hide();
   $("#search-button").on("click", function (event) {
     event.preventDefault();
-   
+
 
     $(".results").show();
 
@@ -38,14 +38,14 @@
     });
 
 
-   
+
 
     var currentDate = new Date();
     var endDate = moment(currentDate).add(5, 'days').format("YYYY-MM-DD");
     var startDate = moment(currentDate).format("YYYY-MM-DD");
-   // console.log(startDate)
+    // console.log(startDate)
     //console.log(endDate)
-    var queryURl = "https://api.stubhub.com/sellers/search/events/v3?q=" + search + "&dateLocal=" + startDate +"TO" + endDate + "&city=Atlanta";
+    var queryURl = "https://api.stubhub.com/sellers/search/events/v3?q=" + search + "&dateLocal=" + startDate + "TO" + endDate + "&city=Atlanta";
     $.ajax({
         method: "GET",
         url: queryURl,
@@ -55,8 +55,8 @@
       })
       .then(function (response) {
         var results = response;
-       // console.log(results)
-       // console.log(results.events.length)
+        // console.log(results)
+        // console.log(results.events.length)
         $(".results-card").empty();
         for (var i = 0; i < results.events.length; i++) {
           var eventName = results.events[i].name;
@@ -65,16 +65,16 @@
           var maxTicketPrice = results.events[i].ticketInfo.maxListPrice;
           var eventDate = results.events[i].eventDateLocal;
           var prettyDate = moment(eventDate).format('MMMM Do YYYY, h:mm a');
-            console.log(eventName)
-            console.log(eventVenue)
-            console.log(minTicketPrice)
-            console.log(maxTicketPrice)
-            console.log(prettyDate)
+          console.log(eventName)
+          console.log(eventVenue)
+          console.log(minTicketPrice)
+          console.log(maxTicketPrice)
+          console.log(prettyDate)
 
-        var repSpace = eventVenue.split(" ").join("+");
+          var repSpace = eventVenue.split(" ").join("+");
           console.log(repSpace)
-          
-        var searchResults =`
+
+          var searchResults = `
           <div class="container">
             <div class="row">
               <div class="col s8 m5">
@@ -99,9 +99,9 @@
             </div>
           </div>
           `;
-          
-            $(".results-card").append(searchResults);
-          
+
+          $(".results-card").append(searchResults);
+
         }
       })
 
@@ -114,7 +114,7 @@
 
   // This is the API key for Open Weather
   var APIKey = "b7b907c1b8d2d7c447d6c40de9d6cb86";
-  var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=houston,us&mode=json&units=imperial&APPID=" + APIKey
+  var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=atlanta,us&mode=json&units=imperial&APPID=" + APIKey
 
   // AJAX call to the OpenWeatherMap API
   $.ajax({
@@ -124,16 +124,16 @@
     .then(function (response) {
 
       //for loop to dynamically create and display table with data from API for the weather
-      for (var i = 0; i < 40; i+=8) {
+      for (var i = 0; i < 40; i += 8) {
 
- var temp = response.list[i].main.temp
- var formatWords = response.list[i].weather[0].description
- var formatWordsUpper = formatWords.toUpperCase();
- var timestamp = response.list[i].dt_txt;
- var formatted = moment(timestamp).format('LL');
- var humid = response.list[i].main.humidity;
+        var temp = response.list[i].main.temp
+        var formatWords = response.list[i].weather[0].description
+        var formatWordsUpper = formatWords.toUpperCase();
+        var timestamp = response.list[i].dt_txt;
+        var formatted = moment(timestamp).format('LL');
+        var humid = response.list[i].main.humidity;
 
- var demoTable = ` 
+        var demoTable = ` 
       <tr>
           <td> ${formatted}</td>
           <td>${temp} deg. F</td>
@@ -142,28 +142,28 @@
           <td>${picWeather()}</td>
       </tr>
     
-   ` 
- 
-   function picWeather(){
-    if (temp >= "70" && formatWordsUpper.includes("CLOUDS")===false && formatWordsUpper.includes("RAIN")===false){
-      return (`<img src="assets/images/sun.jpg" alt="sun" width="40" height="40">`);
-    } else if (formatWordsUpper.includes("RAIN")=== true){
-      return (`<img src="assets/images/rain.jpg" alt="rain" width="40" height="40">`);
-    } else if (temp <= "65"){
-      return (`<img src="assets/images/frost.jpg" alt="frost" width="40" height="40">`);
-    } else if (formatWordsUpper.includes("CLOUDS") === true){
-      return (`<img src="assets/images/clouds.jpg" alt="clouds" width="40" height="40">`);
-    } else if(temp >= "70" && formatWordsUpper.includes("CLOUDS") === true){
-      return (`<img src="assets/images/brokencloudssun.jpg" alt="clouds" width="40" height="40">`)
-    } else{
-      return (`<img src="assets/images/goodday.jpg" alt="clouds" width="40" height="40">`);
-    }
-    
-}
+   `
 
-   
-$("#dynamicTable").append(demoTable);
- picWeather();
+        function picWeather() {
+          if (temp >= "70" && formatWordsUpper.includes("CLOUDS") === false && formatWordsUpper.includes("RAIN") === false) {
+            return (`<img src="assets/images/sun.jpg" alt="sun" width="40" height="40">`);
+          } else if (formatWordsUpper.includes("RAIN") === true) {
+            return (`<img src="assets/images/rain.jpg" alt="rain" width="40" height="40">`);
+          } else if (temp <= "65") {
+            return (`<img src="assets/images/frost.jpg" alt="frost" width="40" height="40">`);
+          } else if (formatWordsUpper.includes("CLOUDS") === true) {
+            return (`<img src="assets/images/clouds.jpg" alt="clouds" width="40" height="40">`);
+          } else if (temp >= "70" && formatWordsUpper.includes("CLOUDS") === true) {
+            return (`<img src="assets/images/brokencloudssun.jpg" alt="clouds" width="40" height="40">`)
+          } else {
+            return (`<img src="assets/images/goodday.jpg" alt="clouds" width="40" height="40">`);
+          }
+
+        }
+
+
+        $("#dynamicTable").append(demoTable);
+        picWeather();
 
 
 
