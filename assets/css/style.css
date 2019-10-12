@@ -61,8 +61,6 @@ footer {
     background-color: #f44336;
 }
 
-
-
 #footer-text {
     color: #ffe0b2;
     display: flex;
@@ -73,16 +71,14 @@ footer {
 footer p {
     font-size: 12px;
     display: flex;
-
-
 }
-
 
 table {
     width: 70%;
 }
 
 .card {
+    padding: 0;
     margin: 0;
     page-break-inside: avoid;
 }
