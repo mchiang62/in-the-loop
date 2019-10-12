@@ -61,10 +61,7 @@ footer {
     text-align: center;
     height: 60px;
     background-color: #f44336;
-
 }
-
-
 
 #footer-text {
     color: #ffe0b2;
@@ -76,17 +73,12 @@ footer {
 footer p {
     font-size: 12px;
     display: flex;
-
-
 }
 
 
-/* table {
-    width: 70%;
-} */
-
 .card {
-    margin: 0;
+    padding: 0;
+    margin: 20px 0;
     page-break-inside: avoid;
 }
 
