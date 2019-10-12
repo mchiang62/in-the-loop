@@ -76,7 +76,7 @@ $(document).ready(function () {
 
           var searchResults = `
           
-              <div class="col s8 m5">
+              <div class="col s8 m4">
                 <div class="card">
                   <div class="card-image">
                     <img src="assets/images/Atlanta_Skyline_from_Buckhead.jpg">

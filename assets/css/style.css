@@ -13,7 +13,9 @@
 }
 
 body {
-    background: #fcf8f2;
+    background-image: url('https://motionarray.imgix.net/preview-72323-mksvsAJ7Sh_0009.jpg');
+    background-attachment: fixed;
+    /* background: #fcf8f2; */
     font-family: 'Roboto Condensed', sans-serif;
     margin: 0;
     padding: 0;
@@ -73,9 +75,6 @@ footer p {
     display: flex;
 }
 
-table {
-    width: 70%;
-}
 
 .card {
     padding: 0;
@@ -101,3 +100,16 @@ table {
     font-size: 24px;
 }
 
+.row .input-field input:focus {
+    border-bottom: 0.5px solid black !important;
+    box-shadow: 0 0.5px 0 0 black !important;
+  }
+
+  button {
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+
+  .carousel .carousel-item {
+      width: 300px;
+     
+  }
