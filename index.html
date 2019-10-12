@@ -11,30 +11,40 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-    <title>Sunny Day Vibes</title>
+    <title>In the Loop</title>
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="" class="brand-logo" id="nav-logo">Sunny Day Vibes</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a class="waves-effect waves-light btn" id="login-btn">LOGIN</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <nav>
+            <div class="wrapper-container">
+                <div class="wrapper logo-row">
+                    <a href="" class="brand-logo" id="nav-logo">In the Loop</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a class="waves-effect waves-light btn" id="login-btn">LOGIN</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!-- <main class="wrapper"> -->
     <div class="carousel">
-        <a class="carousel-item" id="falcons" href="https://www.atlantafalcons.com/schedule/" target="_blank"><img src="assets/images/falcons-logo.jpeg"></a>
-        <a class="carousel-item" id="braves" href="https://www.mlb.com/braves/schedule/2019-10" target="_blank"><img src="assets/images/braves-logo.jpg"></a>
-        <a class="carousel-item" id="hawks" href="https://www.nba.com/hawks/schedule#" target="_blank"><img src="assets/images/Atlanta-Hawks-logo.png"></a>
-        <a class="carousel-item" id="fox" href="https://www.foxtheatre.org/events" target="_blank"><img src="assets/images/fox-logo.png"></a>
+        <a class="carousel-item" id="falcons" href="https://www.atlantafalcons.com/schedule/" target="_blank"><img
+                src="assets/images/falcons-logo.jpeg"></a>
+        <a class="carousel-item" id="braves" href="https://www.mlb.com/braves/schedule/2019-10" target="_blank"><img
+                src="assets/images/braves-logo.jpg"></a>
+        <a class="carousel-item" id="hawks" href="https://www.nba.com/hawks/schedule#" target="_blank"><img
+                src="assets/images/Atlanta-Hawks-logo.png"></a>
+        <a class="carousel-item" id="fox" href="https://www.foxtheatre.org/events" target="_blank"><img
+                src="assets/images/fox-logo.png"></a>
         <a class="carousel-item" id="state-farm" href="https://www.statefarmarena.com/events" target="_blank"><img
                 src="assets/images/state_farm_arena_-_atlanta.png"></a>
-        <a class="carousel-item" id="roxy" href="https://www.livenation.com/venues/33164/coca-cola-roxy" target="_blank"><img src="assets/images/roxy.jpg"></a>
+        <a class="carousel-item" id="roxy" href="https://www.livenation.com/venues/33164/coca-cola-roxy"
+            target="_blank"><img src="assets/images/roxy.jpg"></a>
         <a class="carousel-item" id="symphony" href="#seven!"><img src="assets/images/aso-logo.png"></a>
         <a class="carousel-item" id="tabernacle" href="#eight!"><img src="assets/images/The_Tabernacle_logo.png"></a>
         <a class="carousel-item" id="cobb" href="#nine!"><img
@@ -43,56 +53,60 @@
                 src="assets/images/new_verizon_logo_small-1484149321-8068.jpg"></a>
     </div>
 
-    <div class="row">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-4">
+                <div class="card-panel">
+                    <div class="input-field">
+                        <input type="text" id="search-event">
+                        <label for="search-event">Search event</label>
+                    </div>
 
-        <div class="col-6">
-            <div class="card-panel">
-                <div class="input-field">
-                    <input type="text" id="search-event">
-                    <label for="search-event">Search event</label>
-                </div>
-             
 
-                <div class="input-field center">
-                    <button class="btn" id="search-button">Search</button>
+                    <div class="input-field center">
+                        <button class="btn" id="search-button">Search</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <br>
 
 
-<div class="row col-12">
-    <table class="results center">
-        <thead class="row col-12">
-             <th><h3> 5 Day Forecast </h3></th>       
-        </thead>
-        <tbody id="dynamicTable">
-        </tbody>
-    </table>
-</div>     
-    <br>
-
-    <div class="results-card">
-    
+    <div class="row col-12">
+        <table class="results center">
+            <thead class="row col-12">
+                <th>
+                    <h3> 5 Day Forecast </h3>
+                </th>
+            </thead>
+            <tbody id="dynamicTable">
+            </tbody>
+        </table>
     </div>
 
-    <footer class="page-footer">
-        <div class="container">
+
+    <div class="results-card">
+
+    </div>
+    <!-- </main> -->
+    <footer>
+        <div class="wrapper-footer">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" id="footer-text">
                     <p class="copyright">© 2014 Copyright CCDG Enterprise</p>
                 </div>
             </div>
         </div>
     </footer>
-  
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/javascript/script.js"></script>
-  
+
 
 </body>
 
