@@ -43,8 +43,8 @@
     var currentDate = new Date();
     var endDate = moment(currentDate).add(5, 'days').format("YYYY-MM-DD");
     var startDate = moment(currentDate).format("YYYY-MM-DD");
-    console.log(startDate)
-    console.log(endDate)
+   // console.log(startDate)
+    //console.log(endDate)
     var queryURl = "https://api.stubhub.com/sellers/search/events/v3?q=" + search + "&dateLocal=" + startDate +"TO" + endDate + "&city=Atlanta";
     $.ajax({
         method: "GET",
@@ -55,8 +55,8 @@
       })
       .then(function (response) {
         var results = response;
-        console.log(results)
-        console.log(results.events.length)
+       // console.log(results)
+       // console.log(results.events.length)
         $(".results-card").empty();
         for (var i = 0; i < results.events.length; i++) {
           var eventName = results.events[i].name;
@@ -112,7 +112,7 @@
 
   // This is the API key for Open Weather
   var APIKey = "b7b907c1b8d2d7c447d6c40de9d6cb86";
-  var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=atlanta,us&mode=json&units=imperial&APPID=" + APIKey
+  var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=houston,us&mode=json&units=imperial&APPID=" + APIKey
 
   // AJAX call to the OpenWeatherMap API
   $.ajax({
@@ -121,51 +121,50 @@
     })
     .then(function (response) {
 
-      // Log the resulting object
-      console.log(response);
-
       //for loop to dynamically create and display table with data from API for the weather
       for (var i = 0; i < 40; i+=8) {
 
-        var row = $("<tr>");
-        row.addClass("row");
-        row.attr("data-row", [i]);
+ var temp = response.list[i].main.temp
+ var formatWords = response.list[i].weather[0].description
+ var formatWordsUpper = formatWords.toUpperCase();
+ var timestamp = response.list[i].dt_txt;
+ var formatted = moment(timestamp).format('LL');
+ var humid = response.list[i].main.humidity;
 
-        var rowDisplay = $("<td>");
-        rowDisplay.addClass("resultsTime");
-        rowDisplay.attr("time", response.list[i].dt_txt)
+ var demoTable = ` 
+      <tr>
+          <td> ${formatted}</td>
+          <td>${temp} deg. F</td>
+          <td>${formatWordsUpper}</td>
+          <td>${humid}%</td>
+          <td>${picWeather()}</td>
+      </tr>
+    
+   ` 
+ 
+   function picWeather(){
+    if (temp >= "70" && formatWordsUpper.includes("CLOUDS")===false && formatWordsUpper.includes("RAIN")===false){
+      return (`<img src="assets/images/sun.jpg" alt="sun" width="40" height="40">`);
+    } else if (formatWordsUpper.includes("RAIN")=== true){
+      return (`<img src="assets/images/rain.jpg" alt="rain" width="40" height="40">`);
+    } else if (temp <= "65"){
+      return (`<img src="assets/images/frost.jpg" alt="frost" width="40" height="40">`);
+    } else if (formatWordsUpper.includes("CLOUDS") === true){
+      return (`<img src="assets/images/clouds.jpg" alt="clouds" width="40" height="40">`);
+    } else if(temp >= "70" && formatWordsUpper.includes("CLOUDS") === true){
+      return (`<img src="assets/images/brokencloudssun.jpg" alt="clouds" width="40" height="40">`)
+    } else{
+      return (`<img src="assets/images/goodday.jpg" alt="clouds" width="40" height="40">`);
+    }
+    
+}
 
-        var rowtwoDisplay = $("<td>");
-        rowtwoDisplay.addClass("resultsTemp")
-        rowtwoDisplay.attr("temp", response.list[i].main.temp)
+   
+$("#dynamicTable").append(demoTable);
+ picWeather();
 
-        var rowthreeDisplay = $("<td>");
-        rowthreeDisplay.addClass("resultsDesc")
-        var formatWords = response.list[i].weather[0].description
-        var formatWordsUpper = formatWords.toUpperCase();
-        rowthreeDisplay.attr("desc", formatWordsUpper)
 
-        var rowfourDisplay = $("<td>");
-        rowfourDisplay.addClass("humid")
-        rowfourDisplay.attr("humid", response.list[i].main.humidity)
 
-        //var ashley = document.querySelectorAll('[data-row]')
-        row.append(rowDisplay)
-        row.append(rowtwoDisplay)
-        row.append(rowthreeDisplay)
-        row.append(rowfourDisplay)
-        $("#dynamicTable").append(row)
-
-        //conversion of time from data payload to readable string in HTML
-        var timestamp = response.list[i].dt_txt;
-        var formatted = moment(timestamp).format('LL')
-        //console.log(formatted);
-
-        //show data to table in HTML
-        var weatherone = $(".resultsTime").text(formatted);
-        var weathertwo = $(".resultsTemp").text("Temp: " + response.list[i].main.temp + " deg F ");
-        var weatherthree = $(".resultsDesc").text(formatWordsUpper);
-        var weatherfour = $(".humid").text("Humidity: " + response.list[i].main.humidity);
       }
 
     });
