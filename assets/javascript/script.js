@@ -1,6 +1,6 @@
 // Or with jQuery
  $(document).ready(function(){
-    $('.carousel').carousel();
+  
   var firebaseConfig = {
     apiKey: "AIzaSyCbdMUvQGzxT7u2VSA-tP09Jo6WgzqeNDA",
     authDomain: "sunny-day-b106f.firebaseapp.com",
@@ -21,12 +21,11 @@
   //carousel features
   $('.carousel').carousel();
 
-  //initialization for collasping container
-  //collapse bar features
-  $('.collapsible').collapsible();
+  
   $(".results").hide();
   $("#search-button").on("click", function (event) {
     event.preventDefault();
+   
 
     $(".results").show();
 
@@ -39,7 +38,7 @@
     });
 
 
-    $(".results").show();
+   
 
     var currentDate = new Date();
     var endDate = moment(currentDate).add(5, 'days').format("YYYY-MM-DD");
@@ -58,6 +57,7 @@
         var results = response;
         console.log(results)
         console.log(results.events.length)
+        $(".results-card").empty();
         for (var i = 0; i < results.events.length; i++) {
           var eventName = results.events[i].name;
           var eventVenue = results.events[i].venue.name;
@@ -73,7 +73,7 @@
           
         var searchResults =`
             <div class="row">
-              <div class="col s12 m7">
+              <div class="col m4">
                 <div class="card">
                   <div class="card-image">
                   <img src="assets/images/Atlanta_Skyline_from_Buckhead.jpg">
@@ -83,6 +83,7 @@
                       <p>${minTicketPrice}</p>
                       <p>${maxTicketPrice}</p>
                       <p>${eventVenue}</p>
+                      <p>${prettyDate}</p>
                       <img>${"insert google map images"}</img>
                   </div>
                 </div>
@@ -90,7 +91,7 @@
             </div>
             `;
           
-            $(".results").append(searchResults);
+            $(".results-card").append(searchResults);
           
         }
       })
