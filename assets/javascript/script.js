@@ -75,8 +75,9 @@
           console.log(repSpace)
           
         var searchResults =`
+          <div class="container">
             <div class="row">
-              <div class="col s8 m4">
+              <div class="col s8 m5">
                 <div class="card">
                   <div class="card-image">
                     <img src="assets/images/Atlanta_Skyline_from_Buckhead.jpg">
@@ -96,7 +97,8 @@
                 </div>
               </div>
             </div>
-            `;
+          </div>
+          `;
           
             $(".results-card").append(searchResults);
           

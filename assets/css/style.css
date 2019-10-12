@@ -12,14 +12,17 @@
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+ body {
     background: #fcf8f2;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
+} 
+
+.page-flexbox-wrapper {
+ display: flex;
+ min-height: 100vh;
+ flex-direction: column;
 }
 
 p {
@@ -45,17 +48,16 @@ nav li a {
 
 #login-btn {
     background: #ffe0b2;
-    color: #f44336;
+    color: #0d47a1;
 }
 
 main {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
 }
 
 footer{
     text-align: center;
     height: 60px;
-    background-color:#f44336;
 }
 
 
@@ -70,7 +72,6 @@ footer{
 footer p {
     font-size: 12px;
     display: flex;
-    
 }
 
 table{
@@ -80,7 +81,8 @@ table{
 }
 
 .card {
-    margin: 0 auto;
+    margin: 0; 
+    page-break-inside: avoid;
 }
 
 .event-info {
