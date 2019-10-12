@@ -7,6 +7,7 @@
 .collap-box{
     width:80%;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -15,19 +16,61 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background: #fcf8f2;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 18px;
+}
+
+#nav-logo {
+    padding-left:20px;
+    color:  #ffe0b2;
+    text-shadow: 1.5px 1.5px gray;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+nav {
+    background-color:#f44336;
+    border-bottom: 5px solid black;
+}
+
+nav li a {
+    color: #ffe0b2;
+}
+
+#login-btn {
+    background: #ffe0b2;
+    color: #f44336;
 }
 
 main {
     flex: 1 0 auto;
 }
 
-#nav-logo {
-    padding-left:20px;
-}
-
 footer{
     text-align: center;
     height: 60px;
+    background-color:#f44336;
+}
+
+
+
+#footer-text {
+    color: #ffe0b2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    font-size: 12px;
+    display: flex;
+    
 }
 
 table{
@@ -35,3 +78,22 @@ table{
     border-block: border-box;
     border: solid 1px black;
 }
+
+.card {
+    margin: 0 auto;
+}
+
+.event-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+ 

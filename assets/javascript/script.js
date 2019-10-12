@@ -70,22 +70,29 @@
             console.log(minTicketPrice)
             console.log(maxTicketPrice)
             console.log(prettyDate)
+
+        var repSpace = eventVenue.split(" ").join("+");
+          console.log(repSpace)
           
         var searchResults =`
             <div class="row">
-              <div class="col m4">
+              <div class="col s8 m4">
                 <div class="card">
                   <div class="card-image">
-                  <img src="assets/images/Atlanta_Skyline_from_Buckhead.jpg">
-                    <span class="card-title">${eventName}</span>
-                  </div>
-                  <div class="Information">
-                      <p>${minTicketPrice}</p>
-                      <p>${maxTicketPrice}</p>
-                      <p>${eventVenue}</p>
-                      <p>${prettyDate}</p>
-                      <img>${"insert google map images"}</img>
-                  </div>
+                    <img src="assets/images/Atlanta_Skyline_from_Buckhead.jpg">
+                      <span class="card-title">${eventName}</span>
+                    </div>
+                    <div class="event-info">
+                      <p><strong>Lowest ticket price: </strong>$${minTicketPrice}</p>
+                      <p><strong>Highest ticket price: </strong>$${maxTicketPrice}</p>
+                      <p><strong>Event Venue: </strong>${eventVenue}</p>
+                      <p><strong>Date/Time of Event: </strong>${prettyDate}</p>
+                    </div>
+                    <div class="map">
+                      <iframe width="350" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=
+                        &q=${repSpace}" allowfullscreen>
+                      </iframe>
+                    </div>
                 </div>
               </div>
             </div>
