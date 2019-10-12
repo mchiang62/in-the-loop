@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
@@ -74,31 +75,27 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="row col-12">
-                    <table class="results center">
-                        <thead class="row col-12">
-                            <th>
-                                <h3> 5 Day Forecast </h3>
-                            </th>
-                        </thead>
-                        <tbody id="dynamicTable">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+<table>
+    <table class="results center responsive-table">
+        <thead>
+            <th><h5>Date</h5></th>    
+            <th><h5>Temperature</h5></th>
+            <th><h5>Description</h5></th>   
+            <th><h5>Humidity</h5></th>   
+        </thead>
+        <tbody id="dynamicTable">
+        </tbody>
+</table>
+ <br>
 
 
-            <div class="results-card">
-
-            </div>
-        </main>
-        <footer class="blue darken-4">
-            <div class="wrapper-footer">
-                <div class="row">
-                    <div class="col-12" id="footer-text">
-                        <p class="copyright">© 2014 Copyright CCDG Enterprise</p>
-                    </div>
+    <br>
+    <div class="results-card"> </div>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="footer-text">
+                    <p class="copyright">© 2014 Copyright CCDG Enterprise</p>
                 </div>
             </div>
         </footer>
