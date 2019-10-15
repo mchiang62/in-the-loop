@@ -13,7 +13,7 @@
 }
 
 body {
-    background-image: url('https://motionarray.imgix.net/preview-72323-mksvsAJ7Sh_0009.jpg');
+    background-image: url('https://images.iphonephotographyschool.com/24819/1120b/blur-background-app.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -114,4 +114,8 @@ footer p {
   .carousel .carousel-item {
       width: 300px;
      
+  }
+
+  #search-button {
+      color: #ffe0b2
   }
