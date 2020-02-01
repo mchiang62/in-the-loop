@@ -88,11 +88,7 @@ $(document).ready(function () {
                       <p><strong>Event Venue: </strong>${eventVenue}</p>
                       <p><strong>Date/Time of Event: </strong>${prettyDate}</p>
                     </div>
-                    <div class="map">
-                      <iframe width="350" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=
-                        &q=${repSpace}" allowfullscreen>pu
-                      </iframe>
-                    </div>
+    
                 
             </div>
           </div>
