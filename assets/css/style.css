@@ -1,0 +1,121 @@
+.display-weather,
+.display-traffic {
+    border-block: border-box;
+    border: solid 1px black;
+}
+
+.collap-box {
+    width: 80%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://images.iphonephotographyschool.com/24819/1120b/blur-background-app.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background: #fcf8f2; */
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.page-flexbox-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+p {
+    font-size: 18px;
+}
+
+#nav-logo {
+    padding-left: 20px;
+    color: #ffe0b2;
+    text-shadow: 1.5px 1.5px gray;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #f44336;
+    border-bottom: 5px solid black;
+}
+
+nav li a {
+    color: #ffe0b2;
+}
+
+#login-btn {
+    background: #ffe0b2;
+    color: #0d47a1;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+footer {
+    text-align: center;
+    height: 60px;
+    background-color: #f44336;
+}
+
+#footer-text {
+    color: #ffe0b2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    font-size: 12px;
+    display: flex;
+}
+
+
+.card {
+    padding: 0;
+    margin: 20px 0;
+    page-break-inside: avoid;
+}
+
+.event-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.results-card {
+    line-height: 30px;
+    font-size: 24px;
+}
+
+.row .input-field input:focus {
+    border-bottom: 0.5px solid black !important;
+    box-shadow: 0 0.5px 0 0 black !important;
+  }
+
+  button {
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+
+  .carousel .carousel-item {
+      width: 300px;
+     
+  }
+
+  #search-button {
+      color: #ffe0b2
+  }
